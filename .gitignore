@@ -1,0 +1,10 @@
+apiformat.txt
+packages
+expensestracker/bin
+expensestracker/migrations
+dac/bin
+dac/migrations
+dac/app.config
+expensestracker/appsettings.json
+expensestracker/wwwroot
+.vs

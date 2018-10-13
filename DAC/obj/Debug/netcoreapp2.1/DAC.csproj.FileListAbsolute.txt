@@ -1,0 +1,12 @@
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\DAC\bin\Debug\netcoreapp2.1\DAC.dll.config
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\DAC\bin\Debug\netcoreapp2.1\DAC.deps.json
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\DAC\bin\Debug\netcoreapp2.1\DAC.runtimeconfig.json
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\DAC\bin\Debug\netcoreapp2.1\DAC.runtimeconfig.dev.json
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\DAC\bin\Debug\netcoreapp2.1\DAC.dll
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\DAC\bin\Debug\netcoreapp2.1\DAC.pdb
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\DAC\obj\Debug\netcoreapp2.1\DAC.csprojAssemblyReference.cache
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\DAC\obj\Debug\netcoreapp2.1\DAC.csproj.CoreCompileInputs.cache
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\DAC\obj\Debug\netcoreapp2.1\DAC.AssemblyInfoInputs.cache
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\DAC\obj\Debug\netcoreapp2.1\DAC.AssemblyInfo.cs
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\DAC\obj\Debug\netcoreapp2.1\DAC.dll
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\DAC\obj\Debug\netcoreapp2.1\DAC.pdb

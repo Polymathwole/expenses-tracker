@@ -1,0 +1,14 @@
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\ExpensesTracker\bin\Debug\netcoreapp2.1\ExpensesTracker.deps.json
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\ExpensesTracker\bin\Debug\netcoreapp2.1\ExpensesTracker.runtimeconfig.json
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\ExpensesTracker\bin\Debug\netcoreapp2.1\ExpensesTracker.runtimeconfig.dev.json
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\ExpensesTracker\bin\Debug\netcoreapp2.1\ExpensesTracker.dll
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\ExpensesTracker\bin\Debug\netcoreapp2.1\ExpensesTracker.pdb
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\ExpensesTracker\obj\Debug\netcoreapp2.1\ExpensesTracker.csprojAssemblyReference.cache
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\ExpensesTracker\obj\Debug\netcoreapp2.1\ExpensesTracker.csproj.CoreCompileInputs.cache
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\ExpensesTracker\obj\Debug\netcoreapp2.1\ExpensesTracker.RazorAssemblyInfo.cache
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\ExpensesTracker\obj\Debug\netcoreapp2.1\ExpensesTracker.RazorAssemblyInfo.cs
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\ExpensesTracker\obj\Debug\netcoreapp2.1\ExpensesTracker.AssemblyInfoInputs.cache
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\ExpensesTracker\obj\Debug\netcoreapp2.1\ExpensesTracker.AssemblyInfo.cs
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\ExpensesTracker\obj\Debug\netcoreapp2.1\ExpensesTracker.RazorTargetAssemblyInfo.cache
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\ExpensesTracker\obj\Debug\netcoreapp2.1\ExpensesTracker.dll
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\ExpensesTracker\ExpensesTracker\obj\Debug\netcoreapp2.1\ExpensesTracker.pdb

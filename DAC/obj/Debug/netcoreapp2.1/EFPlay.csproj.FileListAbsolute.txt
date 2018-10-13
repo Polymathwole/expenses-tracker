@@ -1,0 +1,12 @@
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\EFPlay\EFPlay\bin\Debug\netcoreapp2.1\EFPlay.dll.config
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\EFPlay\EFPlay\bin\Debug\netcoreapp2.1\EFPlay.deps.json
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\EFPlay\EFPlay\bin\Debug\netcoreapp2.1\EFPlay.runtimeconfig.json
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\EFPlay\EFPlay\bin\Debug\netcoreapp2.1\EFPlay.runtimeconfig.dev.json
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\EFPlay\EFPlay\bin\Debug\netcoreapp2.1\EFPlay.dll
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\EFPlay\EFPlay\bin\Debug\netcoreapp2.1\EFPlay.pdb
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\EFPlay\EFPlay\obj\Debug\netcoreapp2.1\EFPlay.csproj.CoreCompileInputs.cache
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\EFPlay\EFPlay\obj\Debug\netcoreapp2.1\EFPlay.AssemblyInfoInputs.cache
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\EFPlay\EFPlay\obj\Debug\netcoreapp2.1\EFPlay.AssemblyInfo.cs
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\EFPlay\EFPlay\obj\Debug\netcoreapp2.1\EFPlay.dll
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\EFPlay\EFPlay\obj\Debug\netcoreapp2.1\EFPlay.pdb
+C:\Users\Oluwaremi.REMI\Documents\Visual Studio 2017\Projects\EFPlay\EFPlay\obj\Debug\netcoreapp2.1\EFPlay.csprojAssemblyReference.cache
