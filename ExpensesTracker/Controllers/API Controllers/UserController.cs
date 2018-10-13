@@ -51,7 +51,17 @@ namespace ExpensesTracker.Controllers.APIControllers
                 return BadRequest(new { error = "Invalid day/month/year" });
             }
 
-            DateTime dob = new DateTime(y, m, d);
+            DateTime dob;
+
+            try
+            {
+                dob = new DateTime(y, m, d);
+            }
+            catch
+            {
+                return BadRequest(new { error = "Invalid date" });
+            }
+
 
             AppUser user = new AppUser
             {

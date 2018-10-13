@@ -2,7 +2,9 @@ apiformat.txt
 packages
 expensestracker/bin
 expensestracker/migrations
+expensestracker/obj
 dac/bin
+dac/obj
 dac/migrations
 dac/app.config
 expensestracker/appsettings.json
