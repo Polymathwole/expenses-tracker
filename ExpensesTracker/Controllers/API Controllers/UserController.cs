@@ -28,10 +28,16 @@ namespace ExpensesTracker.Controllers.APIControllers
         public List<AppUser> AllUsers() => userStore.GetAllUsers();
 
         // GET api/<controller>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{username}")]
+        public async Task<IActionResult> Get(string username)
         {
-            return "value";
+            AppUser user = await userStore.FindUser(username);
+
+            if (user==null)
+            {
+                return NotFound(new { error = $"'{username}' not found" });
+            }
+            return Ok(user);
         }
 
         // POST api/<controller>
