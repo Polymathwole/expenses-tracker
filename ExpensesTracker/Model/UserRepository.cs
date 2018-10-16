@@ -23,16 +23,17 @@ namespace ExpensesTracker.Model
 
         public async Task<AppUser> FindUser(string username) => await userManager.FindByNameAsync(username);
 
-        public async Task<AppUser> DeleteUser(string username)
+        public async Task<IdentityResult> DeleteUser(string username)
         {
+            IdentityResult result = null;
             AppUser user = await userManager.FindByNameAsync(username);
 
             if (user!=null)
             {
-                await userManager.DeleteAsync(user);
+                result = await userManager.DeleteAsync(user);
             }
             
-            return user;
+            return result;
         }
 
         public List<AppUser> GetAllUsers() => userManager.Users.ToList();

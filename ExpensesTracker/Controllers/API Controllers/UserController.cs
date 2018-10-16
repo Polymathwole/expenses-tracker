@@ -174,9 +174,38 @@ namespace ExpensesTracker.Controllers.APIControllers
         }
 
         // DELETE api/<controller>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{username}")]
+        public async Task<IActionResult> Delete(string username)
         {
+            string path = configuration.GetSection("LogPath").Value;
+            Logger log = new Logger(path);
+
+            if (username.Trim() == "")
+            {
+                return BadRequest(new { error = "User to delete not specified." });
+            }
+            IdentityResult result = await userStore.DeleteUser(username);
+            if (result==null)
+            {
+                return Ok(new { error = "User not found." });
+            }
+            else
+            {
+                if (result.Succeeded)
+                {
+                    return Ok(new { message = "User deleted successfully." });
+                }
+                else
+                {
+                    IEnumerable<IdentityError> errs = result.Errors;
+                    foreach (IdentityError err in errs)
+                    {
+                        log.WriteError(new string[] { $"Error code: {err.Code}", $"Error description: {err.Description}" });
+                    }
+
+                    return BadRequest(errs);
+                }
+            }
         }
     }
 }
