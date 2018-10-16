@@ -13,7 +13,7 @@ namespace ExpensesTracker.Model
         public string Password { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
-        public char Sex { get; set; }
+        public string Sex { get; set; }
         public DateTime DoB { get; set; }
         public string Day { get; set; }
         public string Month { get; set; }

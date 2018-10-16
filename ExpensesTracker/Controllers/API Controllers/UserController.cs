@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using ExpensesTracker.Utilities;
 using Microsoft.Extensions.Configuration;
+using System.Net.Mail;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -48,9 +49,9 @@ namespace ExpensesTracker.Controllers.APIControllers
             string path = configuration.GetSection("LogPath").Value;
             Logger log = new Logger(path);
 
-            bool dd = int.TryParse(newUser.Day, out d);
-            bool mm = int.TryParse(newUser.Month, out m);
-            bool yy = int.TryParse(newUser.Year, out y);
+            bool dd = int.TryParse(newUser.Day.Trim(), out d);
+            bool mm = int.TryParse(newUser.Month.Trim(), out m);
+            bool yy = int.TryParse(newUser.Year.Trim(), out y);
 
             if (!dd || !mm || !yy)
             {
@@ -68,16 +69,64 @@ namespace ExpensesTracker.Controllers.APIControllers
                 return BadRequest(new { error = "Invalid date" });
             }
 
+            try
+            {
+                MailAddress email = new MailAddress(newUser.Email.Trim());
+            }
+            catch (FormatException fme)
+            {
+                return BadRequest(new { error = "Invalid e-mail" });
+            }
+            catch
+            {
+                return BadRequest(new { error = "E-mail cannot be null." });
+            }
+
+            if (!newUser.PhoneNumber.Trim().StartsWith("0"))
+            {
+                return BadRequest(new { error = "Phone number must start with 0." });
+            }
+            else if (newUser.PhoneNumber.Trim().Length != 11)
+            {
+                return BadRequest(new { error = "Phone number must be 11 digits." });
+            }
+
+            try
+            {
+                if (Convert.ToChar(newUser.Sex.Trim().ToUpper()) != 'M' && Convert.ToChar(newUser.Sex.ToUpper().Trim()) != 'F')
+                {
+                    return BadRequest(new { error = "Sex must be M or F." });
+                }
+            }
+            catch
+            {
+                return BadRequest(new { error = "Invalid. Sex must be M or F." });
+            }
+
+            if (newUser.UserName.Trim().Length < 5 || newUser.UserName.Trim().Length > 10)
+            {
+                return BadRequest(new { error = "Username must have between 5 and 10 characters." });
+            }
+
+            if (newUser.FirstName.Trim().Length < 2)
+            {
+                return BadRequest(new { error = "First name must have at least 2 characters." });
+            }
+
+            if (newUser.LastName.Trim().Length < 2)
+            {
+                return BadRequest(new { error = "Last name must have at least 2 characters." });
+            }
 
             AppUser user = new AppUser
             {
-                UserName = newUser.UserName,
-                Email = newUser.Email,
-                PhoneNumber = newUser.PhoneNumber,
-                FirstName = newUser.FirstName,
-                LastName = newUser.LastName,
+                UserName = newUser.UserName.Trim(),
+                Email = newUser.Email.Trim(),
+                PhoneNumber = newUser.PhoneNumber.Trim(),
+                FirstName = newUser.FirstName.Trim(),
+                LastName = newUser.LastName.Trim(),
                 DoB = dob,
-                Sex = newUser.Sex
+                Sex = Convert.ToChar(newUser.Sex.ToUpper().Trim())
             };
 
             try
