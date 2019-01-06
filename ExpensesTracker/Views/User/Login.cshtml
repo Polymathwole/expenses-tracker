@@ -1,0 +1,61 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model LoginViewModel
+@{
+    ViewBag.Title = "Expenses Tracker | Login";
+}
+
+@section ExtraStyle {
+    <link href="~/styles/loginstyle.css" rel="stylesheet" />
+}
+
+<div class="container-fluid" id="page-container">
+    <div class="float-left">
+        <h3>Welcome to the Expense Tracker App!</h3>
+        <hr />
+        <p>Want to keep track of your expenses? You have come to the right place.</p>
+    </div>
+    <div class="float-right" id="login-form">
+        <form asp-action="Login" method="post">
+            <div asp-validation-summary="ModelOnly"></div>
+            @if (TempData["message"] != null)
+            {
+                <h4 class="login-message">@TempData["message"]</h4>
+            }
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-2">
+                        <label asp-for="UserName">Username</label>
+                    </div>
+                    <div class="col-10">
+                        <input class="form-control" asp-for="UserName" />
+                    </div>
+                </div>
+                <div><span asp-validation-for="UserName" class="text-danger"></span></div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-2">
+                        <label asp-for="Password">Password</label>
+                    </div>
+                    <div class="col-10">
+                        <input class="form-control" type="password" asp-for="Password" />
+                    </div>
+                </div>
+                <div><span asp-validation-for="Password" class="text-danger"></span></div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-3">
+                        <input type="submit" class="btn btn-success" value="SIGN IN" />
+                    </div>
+                    <div class="col-offset-3 col-6">
+                        <a asp-action="Signup" class="btn btn-info">Go to SIGN UP page</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="clearfix"></div>
+</div>

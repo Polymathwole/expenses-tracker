@@ -10,7 +10,7 @@ namespace ExpensesTracker.Model
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public char Sex { get; set; }
+        public string Sex { get; set; }
         public DateTime DoB { get; set; }
     }
 }

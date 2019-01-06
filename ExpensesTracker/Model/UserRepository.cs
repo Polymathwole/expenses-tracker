@@ -37,5 +37,7 @@ namespace ExpensesTracker.Model
         }
 
         public List<AppUser> GetAllUsers() => userManager.Users.ToList();
+
+        public async Task<IdentityResult> UpdateUser(AppUser user) => await userManager.UpdateAsync(user);
     }
 }

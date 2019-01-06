@@ -12,5 +12,6 @@ namespace ExpensesTracker.Model
         Task<AppUser> FindUser(string username);
         List<AppUser> GetAllUsers();
         Task<IdentityResult> DeleteUser(string username);
+        Task<IdentityResult> UpdateUser(AppUser user);
     }
 }

@@ -28,7 +28,13 @@ namespace ExpensesTracker
         {
             services.AddDbContext<AppIdentityDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:Expenses_Tracker"]));
 
-            services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppIdentityDbContext>().AddDefaultTokenProviders();
+            services.AddIdentity<AppUser, IdentityRole>(
+                options => {
+                    options.Password.RequireDigit = false;
+                    options.Password.RequiredLength = 7;
+                    options.Password.RequireNonAlphanumeric = false;
+                    options.Password.RequireUppercase = false;
+            } ).AddEntityFrameworkStores<AppIdentityDbContext>().AddDefaultTokenProviders();
             services.AddTransient<IUser, UserRepository>();
             services.AddMvc();
             services.AddDistributedMemoryCache();
@@ -45,8 +51,8 @@ namespace ExpensesTracker
             app.UseSession();
             app.UseMvc(routes =>
             {
-                routes.MapRoute("default", "{controller=Account}/{action=Login}/{id?}");
-                routes.MapRoute("defaultl", "login", new { controller = "Account", action = "Login" });
+                routes.MapRoute("default", "{controller=User}/{action=Login}/{id?}");
+                // routes.MapRoute("defaultl", "login", new { controller = "Account", action = "Login" });
             }
                 );
             //if (env.IsDevelopment())
