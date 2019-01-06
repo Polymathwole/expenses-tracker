@@ -8,6 +8,6 @@ dac/obj
 dac/migrations
 dac/app.config
 expensestracker/appsettings.json
-expensestracker/wwwroot
 .vs
 bower_components
+lib
