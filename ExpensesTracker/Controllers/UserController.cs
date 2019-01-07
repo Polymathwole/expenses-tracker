@@ -82,7 +82,8 @@ namespace ExpensesTracker.Controllers
                     DoB = svm.DoB,
                     UserName = svm.UserName,
                     Email = svm.Email,
-                    PhoneNumber = svm.PhoneNumber
+                    PhoneNumber = svm.PhoneNumber,
+                    DateCreated = DateTime.Now
                 };
 
                 IdentityResult result = await userStore.CreateNewUser(user, svm.Password);
