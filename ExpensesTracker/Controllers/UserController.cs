@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Http;
+using ExpensesTracker.Utilities;
 
 namespace ExpensesTracker.Controllers
 {
@@ -16,17 +17,26 @@ namespace ExpensesTracker.Controllers
         private IUser userStore;
         private IConfiguration configuration;
         private SignInManager<AppUser> signInManager;
+        private IAuditRepo auditRepo;
 
         public UserController(IServiceProvider serviceProvider)
         {
             userStore = serviceProvider.GetService<IUser>();
             configuration = serviceProvider.GetService<IConfiguration>();
             signInManager = serviceProvider.GetService<SignInManager<AppUser>>();
+            auditRepo = serviceProvider.GetService<IAuditRepo>();
         }
 
         public IActionResult Login()
         {
             return View();
+        }
+
+        private Logger Logger()
+        {
+            string path = configuration.GetSection("LogPath").Value;
+            Logger log = new Logger(path);
+            return log;
         }
 
         [HttpPost]
@@ -45,6 +55,28 @@ namespace ExpensesTracker.Controllers
                     if (signInResult.Succeeded)
                     {
                         HttpContext.Session.SetString("User", lvm.UserName);
+
+                        try
+                        {
+                            string remoteIpAddress = HttpContext.Connection.RemoteIpAddress.MapToIPv4().ToString();
+                            if (Request.Headers.ContainsKey("X-Forwarded-For"))
+                            {
+                                remoteIpAddress = Request.Headers["X-Forwarded-For"];
+                            }
+                                
+                            auditRepo.AddAuditRecord(new Audit
+                            {
+                                UserName = lvm.UserName,
+                                Event = Model.Action.Login.ToString(),
+                                UserIP = remoteIpAddress,
+                                TimeStamp = DateTime.Now
+                            });
+                        }
+                        catch (Exception ex)
+                        {
+                            Logger().WriteError(new string[] { $"Exception msg: {ex.Message}", $"Exception stack trace: {ex.StackTrace}" });
+                        }
+                        
                         return RedirectToAction("Index", "Dashboard");
                     }
                     else if (signInResult.IsNotAllowed)

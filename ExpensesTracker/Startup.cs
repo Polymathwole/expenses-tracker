@@ -27,6 +27,7 @@ namespace ExpensesTracker
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppIdentityDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:Expenses_Tracker"]));
+            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:Expenses_Tracker"]));
 
             services.AddIdentity<AppUser, IdentityRole>(
                 options => {
@@ -36,6 +37,7 @@ namespace ExpensesTracker
                     options.Password.RequireUppercase = false;
             } ).AddEntityFrameworkStores<AppIdentityDbContext>().AddDefaultTokenProviders();
             services.AddTransient<IUser, UserRepository>();
+            services.AddTransient<IAuditRepo, AuditRepository>();
             services.AddMvc();
             services.AddDistributedMemoryCache();
             services.AddSession();
